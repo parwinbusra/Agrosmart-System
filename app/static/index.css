@@ -1,0 +1,205 @@
+/* ✅ Background video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* ✅ Navbar styling */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    text-shadow: 2px 2px black;
+    font-weight: bold;
+    font-size: 22px;
+}
+.logo-img {
+    height: 60px;
+    width: auto;
+    margin-right: 50px;
+}
+.navbar .navbar-nav .nav-link {
+    color: #dcddd4;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    padding-left: 10px;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar .navbar-nav .nav-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #2dc997;
+    color: transparent;
+    width: 0%;
+    content: '.';
+    height: 3px;
+    transition: all 0.5s;
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* ✅ Hero Section */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-family: sans-serif;
+}
+
+.title h1 {
+    font-size: 60px;
+    color: #dcddd4;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px black;
+}
+
+.title p {
+    font-size: 20px;
+    color: #dcddd4;
+    text-align: center;
+    margin: 10px 0 25px;
+    letter-spacing: 6px;
+    text-shadow: 2px 2px black;
+}
+
+a.btn-outline-primary {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+a.btn-outline-primary:hover {
+    background: #2dc997;
+    border: 2px solid #2dc997;
+}
+
+/* ✅ Message box */
+.form-group {
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 25%;
+    padding-right: 25%;
+    z-index: 15;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    align-items: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Raleway&display=swap');
+
+.animated-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeZoom 2s ease-in-out;
+    letter-spacing: 2px;
+}
+
+.animated-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #f2f2f2;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    animation: slideIn 2.5s ease;
+    margin-top: 15px;
+    letter-spacing: 4px;
+}
+
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+
+.typewriter-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    width: 0;
+    margin: 0 auto;
+
+    animation: typewriter-cycle 10s steps(30) infinite;
+}
+
+/* Combined animation: typing, pause, erasing, pause */
+@keyframes typewriter-cycle {
+    0% {
+        width: 0;
+        border-right-color: #fff;
+    }
+    30% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+        border-right-color: #fff; /* Pause before erasing */
+    }
+    80% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+        border-right-color: transparent;
+    }
+}

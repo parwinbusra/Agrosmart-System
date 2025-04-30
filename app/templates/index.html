@@ -1,0 +1,82 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<html>
+  <head>
+    <title>Agro Smart</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- jQuery, Popper & Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}?v={% now "U" %}">
+  </head>
+
+  <body>
+    <!-- ✅ Background Video -->
+    <video autoplay muted loop id="bg-video">
+      <source src="{% static 'image/background.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- ✅ Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="{% static 'image/logo-1.png' %}" alt="Agro Smart Logo" class="logo-img mr-2">
+            <span><b>AGRO SMART</b></span>
+          </a>          
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcol-1">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'visitor_signup' %}"><i class="fas fa-user-plus"></i> Create Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'visitor_login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ✅ Flash Messages -->
+    <div class="form-group">
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li>
+              <div class="alert alert-success">{{ message }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- ✅ Hero Section -->
+    <section class="general-area-home">
+        <div class="title">
+            <h1 class="typewriter-text">Know more about Your crops</h1>
+            <p class="animated-subtitle">Agriculture is not farming, it's feeding</p>
+            <center><a href="{% url 'about' %}" class="btn btn-outline-primary">Know More</a></center>
+        </div>
+    </section>
+  </body>
+</html>
